@@ -1,10 +1,11 @@
-import express from 'express'
-import { categoriesRoute } from './routes/categories.routes'
+import express from "express";
+import { categoriesRoute } from "./routes/categories.routes";
 
-const app = express()
 
-app.use(express.json())
+const app = express();
 
-app.use(categoriesRoute)
+app.use(express.json());
 
-app.listen(3333, () => console.log('listen on port: 3333'))
+app.use("/categories",categoriesRoute);
+
+app.listen(3333, () => console.log("listen on port: 3333"));
