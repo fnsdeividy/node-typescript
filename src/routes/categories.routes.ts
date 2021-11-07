@@ -12,4 +12,11 @@ categoriesRoute.post("/", (req, res) => {
   return res.status(201).send();
 });
 
+categoriesRoute.get('/', (req, res) => {
+    const getAll = categoriesRepository.list()
+
+    return res.json(getAll)
+
+})
+
 export { categoriesRoute };
